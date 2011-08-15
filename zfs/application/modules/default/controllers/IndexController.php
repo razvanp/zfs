@@ -12,7 +12,7 @@ class Default_IndexController extends Zend_Controller_Action
     {
         // action body
         
-        txt(WEBROOT);
+        pr(APPLICATION_PATH);
     }
 
     public function testAction()
