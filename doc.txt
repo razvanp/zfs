@@ -1,0 +1,4 @@
+http://framework.zend.com/wiki/display/ZFDEV/Home   - zend dev 
+
+set up git for gitgub 
+http://help.github.com/win-set-up-git/
