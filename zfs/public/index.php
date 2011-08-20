@@ -1,7 +1,7 @@
 <?php
 
 
-//define("WEBROOT", realpath(dirname(__FILE__)));
+define("WEBROOT", realpath(dirname(__FILE__)));
 
 
 // Define path to application directory
