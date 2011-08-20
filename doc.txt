@@ -2,3 +2,17 @@ http://framework.zend.com/wiki/display/ZFDEV/Home   - zend dev
 
 set up git for gitgub 
 http://help.github.com/win-set-up-git/
+
+
+doctrine cli comands:
+> php doctrine.php orm:schema-tool:creste --dump-sql     -for test
+> php doctrine.php orm:schema-tool:creste                - create table from cli using doctrine entity\user
+
+
+
+
+pear insatll 
+move go-pear.phat from PEAR dir to php dir and run :
+php -d phar.require_hash=0 go-pear.phar
+
+

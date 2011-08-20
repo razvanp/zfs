@@ -1,17 +1,37 @@
 <phpunit bootstrap="./bootstrap.php">
     <testsuite name="Application Test Suite">
-        <directory>./application</directory>
+        <directory>./</directory>
     </testsuite>
+    <!--
     <testsuite name="Library Test Suite">
         <directory>./library</directory>
     </testsuite>
+    -->
     
+    <!--
     <filter>
-        <!-- If Zend Framework is inside your project's library, uncomment this filter -->
-        <!-- 
+        If Zend Framework is inside your project's library, uncomment this filter 
         <whitelist>
             <directory suffix=".php">../../library/Zend</directory>
         </whitelist>
-        -->
+        
+        
+        
     </filter>
+    -->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../library/</directory>
+            <directory suffix=".php">../application/</directory>
+            <exclude>
+                <directory suffix=".phtml">../application/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log highlowerbound="80" lowupperbound="50" highlight="true" yui="true" charset="UTF-8" target="./log/report" type="coverage-html"></log>
+    </logging>
+    
+    
 </phpunit>
