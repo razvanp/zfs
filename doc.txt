@@ -2,6 +2,8 @@ http://framework.zend.com/wiki/display/ZFDEV/Home   - zend dev
 
 set up git for gitgub 
 http://help.github.com/win-set-up-git/
+https://github.com/ralphschindler/NOLASnowball/blob/doctrine2-managed-crud/application/configs/application.ini
+
 
 
 doctrine cli comands:
@@ -14,5 +16,16 @@ doctrine cli comands:
 pear insatll 
 move go-pear.phat from PEAR dir to php dir and run :
 php -d phar.require_hash=0 go-pear.phar
+
+
+
+
+
+
+
+
+
+
+
 
 
