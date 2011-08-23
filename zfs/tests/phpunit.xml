@@ -25,13 +25,15 @@
             <directory suffix=".php">../application/</directory>
             <exclude>
                 <directory suffix=".phtml">../application/</directory>
+                <directory suffix=".phtml">../library/Doctrine</directory>
+                <directory suffix=".phtml">../library/Bisna</directory>
+                <directory suffix=".phtml">../library/Symfony</directory>
+                <file>../application/Bootstrap.php</file>
             </exclude>
         </whitelist>
     </filter>
 
-    <logging>
-        <log highlowerbound="80" lowupperbound="50" highlight="true" yui="true" charset="UTF-8" target="./log/report" type="coverage-html"></log>
-    </logging>
+    
     
     
 </phpunit>

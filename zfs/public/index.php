@@ -33,8 +33,8 @@ $application->bootstrap()
             ->run();
 
 
-function pr($value){
-    echo '<pre style="text-align: left; overflow: auto; border: 3px solid #F3FF8F; background: black; color: #F3FF8F; padding: 10px; margin: 10px;" title="">';
-    Zend_Debug::dump($value);
-    echo '</pre>';
-}
+//function pr($value){
+//    echo '<pre style="text-align: left; overflow: auto; border: 3px solid #F3FF8F; background: black; color: #F3FF8F; padding: 10px; margin: 10px;" title="">';
+//    Zend_Debug::dump($value);
+//    echo '</pre>';
+//}

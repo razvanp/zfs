@@ -14,7 +14,7 @@ class Default_IndexController extends Zend_Controller_Action
         
         //pr(APPLICATION_PATH);
         $u = new ZF\Entity\User();
-        pr($u);
+        var_dump($u);
     }
 
     public function testAction()

@@ -23,7 +23,7 @@ class ZF_Plugins_test extends Zend_Controller_Plugin_Abstract {
         if ($moduleName == 'admin') {
                 $this->layout->setLayout('admin');
                 $view = $this->layout->getView();
-                pr($view);
+                //pr($view);
         }else{
                 $this->layout->setLayout('layout'); 
         }
