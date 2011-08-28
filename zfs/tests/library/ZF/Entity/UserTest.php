@@ -14,23 +14,32 @@
 namespace ZF\Entity;
 
 class UserTest extends \ModelTestCase{
-    //put your code her
+
     
-    public function testFirstname(){
-        
-        $u = new User();
-        
-        $u->firstName = "jone";
-        $u->lastName = "alfa";
+    public function testCanCreateUser(){
+        $this->assertInstanceOf('ZF\Entity\User', new User());
+    }
+
+
+    public function testFirstName(){
         
         $em = $this->doctrineContainer->getEntityManager();
-        $em->persist($u);
+        
+        $v = new User;
+        $v->firstName = "Jon";
+        $v->lastName = "Smith";
+        
+
+        $em->persist($v);
         $em->flush();
         
-        $users = $em->createQuery('select u from Zf\Entity\User u')->execute();
+        //$em->clear();
+        $users = $em->createQuery('select u from ZF\Entity\User u')->execute();
         $this->assertEquals(1, count($users));
-        //$this->assertTrue(true);
+        $this->assertTrue(true);
     }
+    
+  
     
     
 }

@@ -38,6 +38,14 @@ class User {
      */
     private $lastName;
     
+    /**
+     *
+     * @param \Doctrine\Common\Collection $property
+     * @var ZF\Entity\Purchase $purchases
+     * @OneToMany(targetEntity="Purchase", mappedBy="User", cascade={"persist","remove"}) 
+     */
+    private $purchase;
+    
     public function __get($property){
         return $this->$property;
     }
