@@ -1,4 +1,4 @@
-<phpunit bootstrap="./bootstrap.php">
+<phpunit bootstrap="./bootstrap.php" >
     <testsuite name="Application Test Suite">
         <directory>./</directory>
     </testsuite>
@@ -21,19 +21,23 @@
     -->
     <filter>
         <whitelist>
-            <directory suffix=".php">../library/</directory>
-            <directory suffix=".php">../application/</directory>
+            <directory suffix=".php">../library/ZF/Entity</directory>
+            <directory suffix=".php">../application</directory>
             <exclude>
-                <directory suffix=".phtml">../application/</directory>
-                <directory suffix=".phtml">../library/Doctrine</directory>
-                <directory suffix=".phtml">../library/Bisna</directory>
-                <directory suffix=".phtml">../library/Symfony</directory>
-                <file>../application/Bootstrap.php</file>
+                <directory suffix=".phtml">../application</directory>
+                <file>../application/Bootstrap.php</file> 
+                <file>../scripts/doctrine.php</file>
+                <file>../application/modules/default/controllers/ErrorController.php</file>
             </exclude>
         </whitelist>
     </filter>
 
-    
+
+    <logging>
+     <log type="coverage-html" target="./log/report" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70" />
+     <log type="testdox-html" target="./log/testdox.html" />
+  </logging>
+
     
     
 </phpunit>

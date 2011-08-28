@@ -11,11 +11,13 @@
  * @author Cod
  */
 namespace ZF\Entity;
+   
 /**
  * @Table(name="purchases")
  * @Entity
  */
-class Purchase {
+class Purchase
+{
     /**
      * @var integer $id
      * @Column(name="id", type="integer", nullable=false)
@@ -36,14 +38,14 @@ class Purchase {
      * @var string
      * @Column(type="string") 
      */
-    private $itemName;
+    private $storeName;
     
     /**
      *
      * @var decimal
      * @Column(type="decimal", precision=2, scale=4) 
      */
-    private $amount;
+    private $amount = 0;
     
     /**
      *
@@ -55,8 +57,20 @@ class Purchase {
      */
     private $user;
     
+    /**
+     *
+     * @ManyToMany(targetEntity="Product", inversedBy="purchases", cascade={"persist","remove"}) 
+     * @JoinTable(name="purchases_products",
+     *  joinColumns={@JoinColumn(name="purchase_id", referencedColumnName="id")},
+     *  inverseJoinColumns={@JoinColumn(name="product_id", referencedColumnName="id")}
+     * )
+     */
+    private $products;
+    
     public function __construct(){
         $this->created = new \DateTime(date("Y-m-d H:i:s"));
+        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
+        
     }
 
 

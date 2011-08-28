@@ -42,9 +42,9 @@ class User {
      *
      * @param \Doctrine\Common\Collection $property
      * @var ZF\Entity\Purchase $purchases
-     * @OneToMany(targetEntity="Purchase", mappedBy="User", cascade={"persist","remove"}) 
+     * @OneToMany(targetEntity="Purchase", mappedBy="user", cascade={"persist","remove"}) 
      */
-    private $purchase;
+    private $purchases;
     
     public function __get($property){
         return $this->$property;

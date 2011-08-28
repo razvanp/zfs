@@ -25,24 +25,26 @@ class PurchaseTest extends \ModelTestCase{
 
         $purchese1= new Purchase();
         $purchese1->amount = 12;
-        $purchese1->itemName = "Primul test";
+        $purchese1->storeName = "3A";
         
         
         $purchese2= new Purchase();
         $purchese2->amount = 12;
-        $purchese2->itemName = "Seccond test";
+        $purchese2->storeName = "3B";
         
         
         //$u = $this->getUser();
-        $u1->purchase = array($purchese1, $purchese2);
+        $u1->purchases = array($purchese1, $purchese2);
         
         $em->persist($u1);
         $em->flush();
         
+        
         $all = $em->createQuery('select u1 from ZF\Entity\User u1')->execute();
         
-        $this->assertEquals(2,count($all[0]->purchase));
-        
+        $this->assertEquals(2,count($all[0]->purchases));
+        $this->assertEquals(0,$all[0]->purchases[0]->amount);
+        $em->clear();
         //var_dump($all[0]->purchase->toArray());
         
     }
