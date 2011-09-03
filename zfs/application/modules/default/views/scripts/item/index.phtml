@@ -1,0 +1,25 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>Item</b> and script/action name <b>index</b></p>
+        <table border="1" style="padding: 10px;">
+            <tr>
+                <th>ID</th>
+                <th style="padding: 3px;">Item Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+        
+        <?php 
+            foreach ($this->items as $item) {
+                if ($item instanceof \ZF\App\ItemDto) {
+                    echo "<tr>
+                            <td>{$item->id}</td>
+                            <td>{$item->name}</td>
+                            <td></td>
+                            <td></td>
+                         </tr>";
+                }
+            }
+        ?>
+        </table>
+</div>

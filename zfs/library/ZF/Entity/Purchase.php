@@ -15,6 +15,7 @@ namespace ZF\Entity;
 /**
  * @Table(name="purchases")
  * @Entity
+ * @HasLifecycleCallbacks
  */
 class Purchase
 {
@@ -81,6 +82,17 @@ class Purchase
     
     public function __set($property, $value){
         $this->$property = $value;
+    }
+    
+    /**
+     * @PrePersist @PreUpdate
+     */
+    public function updateTotal(){
+        $total = 0;
+        foreach ($this->products as $product) {
+            $total = $total + $product->amount;
+        }
+        $this->amount = $total;
     }
     
 }

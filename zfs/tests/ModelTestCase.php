@@ -66,4 +66,38 @@ class ModelTestCase extends PHPUnit_Framework_Testcase{
         parent::tearDown();
     }
     
+    
+    public function getTestUser($name)
+    {
+        $user = new ZF\Entity\User();
+        $user->firstName = $name;
+        $user->lastName = "Constantin";
+        return $user;
+    }
+    
+    public function getProductOrange()
+    {
+        $product = new ZF\Entity\Product();
+        $product->name = "Oranges";
+        $product->amount = 2.66;
+        $this->doctrineContainer->getEntityManager()->persist($product);
+        return $product;
+    }
+    
+    public function getProductApple()
+    {
+        $product = new ZF\Entity\Product();
+        $product->name = "Apples";
+        $product->amount = 2.66;
+        $this->doctrineContainer->getEntityManager()->persist($product);
+        return $product;
+    }
+    
+    public function getPurchase()
+    {
+        $purchase = new \ZF\Entity\Purchase();
+        $purchase->storeName = "My Store";
+        return $purchase;
+    }
+    
 }
