@@ -44,7 +44,7 @@ class Purchase
     /**
      *
      * @var decimal
-     * @Column(type="decimal", precision=2, scale=4) 
+     * @Column(type="float", precision=2, scale=4) 
      */
     private $amount = 0;
     

@@ -11,7 +11,13 @@
 				tstst
     </div>
     <div style="width:1000px;margin:auto;height:auto;border:1px solid blue;overflow:hidden">
+        
 	<?php echo $this->layout()->content; ?>
+        <?php 
+            foreach ($this->flashmessages as $value) {
+                var_dump($value);
+            }
+        ?>
     </div>
 </body>
 </html>

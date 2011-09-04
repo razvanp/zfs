@@ -37,11 +37,33 @@ class Default_ItemController extends Zend_Controller_Action
     public function createAction()
     {
         // action body
-        $form = new Default_Form_ItemEditor(array('itemId' => 4, 'test'=> 'here'));
+        
+        $form = new Default_Form_ItemEditor(array('itemId' => 4, 'controller'=> $this));
+        $form->startup($this, array($this,'Default_Form_ItemEditorSubmited'));
         $this->view->form = $form;
         
-        $form->process($this);
+        
                 
+    }
+    
+    public function Default_Form_ItemEditorSubmited(Default_Form_ItemEditor $form){    
+        
+        try {
+            
+            $form->process($this);
+            
+        } catch (Zend_Exception $e) {
+            $form->setErrors(array($e->getMessage()));
+            $form->addDecorator('Errors', array('placement' => 'prepend'));
+            //$this->_flashMessenger->addMessage(array('error'=> $e->getMessage()));
+            //print_r($form->getMessages());
+            //$this->_helper->redirector('create', 'item');
+            //$this->_forward('create', 'item');
+        }
+
+
+
+        
     }
 
 

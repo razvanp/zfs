@@ -1,6 +1,6 @@
 <?php
 
-class Default_Form_ItemEditor extends Zend_Form
+class Default_Form_ItemEditor extends ZF_Forms_FForm
 {
 
     /**
@@ -9,19 +9,25 @@ class Default_Form_ItemEditor extends Zend_Form
      */
     public $itemId;
     protected $test;
+   
     
-    public function setItemId($value){
+   public function setItemId($value){
         $this->itemId = $value;
     }
     
     public function setTest($value){
         $this->test = $value;
     }
+    
+    
+    
 
     public function init()
     {
         /* Form Elements & Other Definitions Here ... */
-        var_dump($this->itemId);
+        
+        $this->setAction('/item/create');
+        
         $this->name = new Zend_Form_Element_Text('name');
         $this->name->setLabel('item name')
                     ->setValue($this->test)
@@ -47,17 +53,12 @@ class Default_Form_ItemEditor extends Zend_Form
     
     public function process(Default_ItemController $controller)
     {
-        
-        
-        if ($controller->getRequest()->isPost() === true) {
-            if ($this->isValid($controller->getRequest()->getParams())) {
-                $controller->session->items[] = $this->mappToItemDto();
-            } else {
-                $controller->view->errorElemsnts = $this->getMessages();
-            }
-        }
+           $data = $this->getFormParams();
+           
+           $redirector = $controller->getHelper('redirector');
+           $redirector->gotoSimple('index','index');
 
-       
+         // die();
     }
     
     protected function mappToItemDto() {
@@ -68,6 +69,7 @@ class Default_Form_ItemEditor extends Zend_Form
 
         return $item;
     }
+    
     
     
     

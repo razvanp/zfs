@@ -3,6 +3,8 @@
     <h3>This is your project's main page</h3>
     <h2>Message: </h2>
     <?php echo $this->formreg; ?>
+    
+    Go to Items <a href="<?php echo $this->url(array('module' => 'default','controller'=>'item','action'=>'create'), null, FALSE);?>" title="go to item">Item Controller</a>
 </div>
 
 

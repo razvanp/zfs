@@ -33,6 +33,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     protected function _initActinHelper()
     {
         Zend_Controller_Action_HelperBroker::addHelper(new ZF_Helpers_SignUp());
+        Zend_Controller_Action_HelperBroker::addHelper(new ZF_Helpers_FlashMesseges());
     }
 
 }
