@@ -34,19 +34,19 @@ class Default_IndexController extends Zend_Controller_Action
         //$this->view->messages = $this->_flashMessenger->getMessages();
         //$this->view->formreg = new Default_Form_RegTest();
         
-        $username = 'razvan';
-        $password = 'me';
+        //$username = 'razvan';
+        //$password = 'me';
         
         
-        $adapter = new ZF_libs_AuthAdapter($username, $password);
-        $result = Zend_Auth::getInstance()->authenticate($adapter);
+        //$adapter = new ZF_libs_AuthAdapter($username, $password);
+        //$result = Zend_Auth::getInstance()->authenticate($adapter);
         
-        if (Zend_Auth::getInstance()->hasIdentity()) {
+        //if (Zend_Auth::getInstance()->hasIdentity()) {
             //var_dump(Zend_Auth::getInstance()->getStorage()->read()->username);
             
-        } else {
-            var_dump(implode(' ', $result->getMessages()));
-        }
+        //} else {
+        //    var_dump(implode(' ', $result->getMessages()));
+       // }
         
         
     }
